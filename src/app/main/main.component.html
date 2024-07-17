@@ -1,1 +1,30 @@
-<p>main works!</p>
+<main>
+    <div class="container">
+        <mat-form-field>
+            <mat-label>Insert To Do</mat-label>
+            <input matInput type="text" [(ngModel)]="value">
+            @if (value) {
+            <button matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                <mat-icon>close</mat-icon>
+            </button>
+            }
+        </mat-form-field>
+
+    </div>
+</main>
+
+<style scoped>
+    .container {
+        padding: 2rem 0;
+        display: flex;
+        justify-content: center;
+
+        mat-label {
+            padding-top: 1rem;
+        }
+
+        .mat-mdc-form-field-flex {
+            align-items: center;
+        }
+    }
+</style>
