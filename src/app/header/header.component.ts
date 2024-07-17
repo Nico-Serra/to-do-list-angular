@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-
+  menu = ['home', 'about', 'contacts'];
+  socials = [`linkedin`, 'github', 'youtube']
 }

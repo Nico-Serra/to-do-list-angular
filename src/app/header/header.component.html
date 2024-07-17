@@ -1,5 +1,44 @@
 <header>
     <nav>
-        
+        <div class="logo">ToDoList</div>
+        <ul class="menu">
+            @for(item of menu; track item){
+            <li><a href="">{{ item }}</a></li>
+            }
+        </ul>
+        <ul>
+            @for(social of socials; track social){
+            <li><a href=""><i class="fa-brands fa-{{ social }}"></i></a></li>
+            }
+        </ul>
     </nav>
 </header>
+
+<style scoped>
+    nav {
+        width: 80%;
+        margin: auto;
+        max-width: 1440px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo {
+            color: rgb(23, 233, 170);
+            font-weight: bold;
+            font-size: 25px;
+        }
+
+        ul {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+
+            a {
+                text-decoration: none;
+                text-transform: uppercase;
+                color: rgb(23, 233, 170);
+            }
+        }
+    }
+</style>
