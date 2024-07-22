@@ -1,20 +1,16 @@
 import { Component } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
 import { LocalStorageService } from '../local-storage.service';
-import { MatCardModule } from '@angular/material/card';
-import { log } from 'console';
-
-
 
 @Component({
-  selector: 'app-main',
+  selector: 'app-home',
   standalone: true,
   imports: [FormsModule, MatCardModule],
-  templateUrl: './main.component.html',
-  styleUrl: './main.component.css'
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.css'
 })
-export class MainComponent {
-
+export class HomeComponent {
   constructor(private localStorageService: LocalStorageService) { }
 
   list: string[] = []
@@ -23,8 +19,10 @@ export class MainComponent {
 
   ngOnInit() {
     this.listPrint = this.localStorageService.getItem('list');
-    console.log("prsi");
-    console.log(this.localStorageService.getItem('list'));
+    //console.log("prsi");
+    //console.log(this.localStorageService.getItem('list'));
+    //console.log(this.listPrint);
+    
     if (this.localStorageService.getItem('list')) {
       this.list = this.localStorageService.getItem('list');
     }

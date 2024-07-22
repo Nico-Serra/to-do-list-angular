@@ -1,0 +1,125 @@
+<div class="container">
+    <h1>Insert your toDo</h1>
+
+    <div class="groupInp">
+        <input type="text" [(ngModel)]="dynamicValue">
+        <button type="submit" (click)="addToDo()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-send"
+                viewBox="0 0 16 16">
+                <path
+                    d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z" />
+            </svg>
+        </button>
+    </div>
+
+    <div class="cards">
+        @for (element of listPrint; track $index) {
+        <mat-card appearance="outlined">
+            <mat-card-content>{{element}}</mat-card-content>
+            <button type="submit" (click)="removeToDo($index)"><i class="fa-solid fa-trash"></i></button>
+        </mat-card>
+        } @empty {
+        <h3>Inserisci la tua prima toDo</h3>
+        }
+    </div>
+    @if (listPrint?.length) {
+    <button class="btn_deleteAll" (click)="removeAll()">
+        Delete all
+    </button>
+    }
+</div>
+
+<style scoped>
+    .container {
+        padding: 1rem 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h1 {
+            color: white;
+        }
+
+        .btn_deleteAll {
+            align-items: center;
+            padding: 1rem;
+            background-color: red;
+            border-radius: 50px;
+            font-size: 20px;
+            text-transform: uppercase;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+    }
+
+    .groupInp {
+        background-color: rgb(233, 233, 233);
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+
+        input {
+            border: none;
+            outline: none;
+            background-color: rgb(233, 233, 233);
+            flex-grow: 1;
+            font-size: 25px;
+
+        }
+
+        button {
+            border: none;
+            background-color: rgb(233, 233, 233);
+            cursor: pointer;
+            background-color: seagreen;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0.8rem;
+
+
+        }
+    }
+
+    .cards {
+        margin: 2rem 0;
+        overflow-y: auto;
+
+        .mat-mdc-card {
+            width: 500px;
+            background-color: rgb(233, 233, 233);
+            margin: 1rem 0;
+            padding: 1rem;
+            border: 0;
+            border-radius: 50px;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+
+            .mat-mdc-card-content {
+                padding: 0;
+                overflow-x: auto;
+            }
+
+            button {
+                border: none;
+                background-color: rgb(233, 233, 233);
+                cursor: pointer;
+                aspect-ratio: 1;
+                background-color: red;
+                color: white;
+                padding: 0.5rem;
+                border-radius: 50%;
+
+            }
+        }
+
+    }
+</style>

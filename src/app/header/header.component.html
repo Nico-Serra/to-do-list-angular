@@ -2,8 +2,9 @@
     <nav>
         <div class="logo">ToDoList</div>
         <ul class="menu">
-            @for(item of menu; track item){
-            <li><a href="">{{ item }}</a></li>
+            @for(item of menu; track $index){
+            <li><a href="{{item}}" routerLinkActive="router-link-active" routerLinkActive="router-link-active">{{ item
+                    }}</a></li>
             }
         </ul>
         <ul>
@@ -17,6 +18,7 @@
 <style scoped>
     nav {
         width: 80%;
+        height: 50px;
         margin: auto;
         max-width: 1440px;
         display: flex;
