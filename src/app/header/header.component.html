@@ -3,19 +3,29 @@
         <div class="logo">ToDoList</div>
         <ul class="menu">
             @for(item of menu; track $index){
-            <li><a href="{{item}}" routerLinkActive="router-link-active" routerLinkActive="router-link-active">{{ item
-                    }}</a></li>
+            <li>
+                <a href="{{item}}"><i
+                        class="fa-solid fa-{{item === 'home'? 'home':''||item === 'about'? 'user-plus':'' || item === 'contacts'? 'address-book':''}}"></i></a>
+            </li>
             }
         </ul>
         <ul>
             @for(social of socials; track social){
-            <li><a href=""><i class="fa-brands fa-{{ social }}"></i></a></li>
+            <li>
+                <a href=""><i class="fa-brands fa-{{ social }}"></i>
+                </a>
+            </li>
             }
         </ul>
     </nav>
 </header>
 
 <style scoped>
+    header {
+        background-color: seagreen;
+        box-shadow: 0 0 10px;
+    }
+
     nav {
         width: 80%;
         height: 50px;
@@ -26,7 +36,7 @@
         align-items: center;
 
         .logo {
-            color: rgb(23, 233, 170);
+            color: whitesmoke;
             font-weight: bold;
             font-size: 25px;
         }
@@ -38,8 +48,8 @@
 
             a {
                 text-decoration: none;
-                text-transform: uppercase;
-                color: rgb(23, 233, 170);
+                color: whitesmoke;
+                font-size: 18px;
             }
         }
     }

@@ -8,14 +8,12 @@ body {
 body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
-    background-color: rgb(39, 39, 39);
     overflow: hidden;
     height: 100vh;
 }
 
 main {
     height: calc(100vh - 100px);
-
 }
 
 .container {
